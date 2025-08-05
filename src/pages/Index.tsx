@@ -132,10 +132,12 @@ const Index = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button variant="hero" size="xl" className="group">
-                Get Free Estimate
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
+              <NavLink to="/quote">
+                <Button variant="hero" size="xl" className="group">
+                  Get Free Quote
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </NavLink>
               <Button variant="outline" size="xl" className="bg-background/10 backdrop-blur-sm border-background/30 text-background hover:bg-background hover:text-foreground">
                 View Our Work
               </Button>
@@ -294,10 +296,12 @@ const Index = () => {
               Contact us today for a free consultation and estimate. Let's bring your vision to life with uncompromising quality and craftsmanship.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="luxury" size="xl">
-                Get Free Estimate
-                <ArrowRight className="w-5 h-5 ml-2" />
-              </Button>
+              <NavLink to="/quote">
+                <Button variant="luxury" size="xl">
+                  Get Free Quote
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </Button>
+              </NavLink>
               <Button variant="outline" size="xl" className="bg-secondary-foreground/10 backdrop-blur-sm border-secondary-foreground/30 text-secondary-foreground hover:bg-secondary-foreground hover:text-secondary">
                 Schedule Consultation
               </Button>

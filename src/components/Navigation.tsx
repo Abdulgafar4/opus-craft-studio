@@ -35,10 +35,6 @@ const Navigation = () => {
     { to: "/services/interior-design", label: "Interior Design", icon: Paintbrush },
   ];
 
-  const dashboardItems = [
-    { to: "/customer-dashboard", label: "Customer Portal", icon: User },
-    { to: "/admin", label: "Admin Portal", icon: UserCog },
-  ];
 
   const isActive = (path: string) => location.pathname === path;
 
@@ -102,14 +98,21 @@ const Navigation = () => {
                 </div>
               </div>
 
-              {dashboardItems.map((item) => (
-                <NavItem key={item.to} {...item} />
-              ))}
             </div>
 
-            <Button variant="luxury" size="lg">
-              Get Quote
-            </Button>
+            <div className="flex items-center space-x-3">
+              <NavLink to="/quote">
+                <Button variant="luxury" size="lg">
+                  Get Quote
+                </Button>
+              </NavLink>
+              <Button variant="outline" size="lg">
+                Login
+              </Button>
+              <Button variant="default" size="lg">
+                Sign Up
+              </Button>
+            </div>
           </div>
 
           {/* Mobile Menu Button */}
@@ -146,16 +149,20 @@ const Navigation = () => {
               </NavLink>
             </div>
 
-            <div className="space-y-2">
-              {dashboardItems.map((item) => (
-                <NavItem key={item.to} {...item} mobile />
-              ))}
-            </div>
-
-            <div className="px-4 pt-4">
-              <Button variant="luxury" size="lg" className="w-full">
-                Get Quote
-              </Button>
+            <div className="px-4 pt-6 space-y-3">
+              <NavLink to="/quote" onClick={() => setIsOpen(false)}>
+                <Button variant="luxury" size="lg" className="w-full">
+                  Get Quote
+                </Button>
+              </NavLink>
+              <div className="flex space-x-3">
+                <Button variant="outline" size="lg" className="flex-1">
+                  Login
+                </Button>
+                <Button variant="default" size="lg" className="flex-1">
+                  Sign Up
+                </Button>
+              </div>
             </div>
           </div>
         )}

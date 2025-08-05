@@ -15,175 +15,109 @@ import {
 } from "lucide-react";
 import { NavLink } from "react-router-dom";
 import heroImage from "@/assets/hero-construction.jpg";
-import foundationImage from "@/assets/foundation-work.jpg";
-import framingImage from "@/assets/framing-work.jpg";
-import interiorImage from "@/assets/interior-design.jpg";
-import landscapingImage from "@/assets/landscaping.jpg";
+import foundationWork from "@/assets/foundation-work.jpg";
+import framingWork from "@/assets/framing-work.jpg";
+import interiorDesign from "@/assets/interior-design.jpg";
+import landscaping from "@/assets/landscaping.jpg";
+import clearingService from "@/assets/clearing-service.jpg";
+import preConstruction from "@/assets/pre-construction.jpg";
+import excavation from "@/assets/excavation.jpg";
+import plumbing from "@/assets/plumbing.jpg";
+import midConstruction from "@/assets/mid-construction.jpg";
+import siteCleanup from "@/assets/site-cleanup.jpg";
+import concreteWork from "@/assets/concrete-work.jpg";
 
 const Services = () => {
-  const allServices = [
+  const services = [
     {
       id: "clearing",
-      icon: Trees,
       title: "Site Clearing",
-      description: "Professional land clearing and preparation for construction",
-      image: foundationImage,
-      duration: "1-2 weeks",
-      category: "Pre-Construction"
+      description: "Professional land clearing and site preparation for construction projects",
+      price: "Starting at $2,500",
+      image: clearingService,
+      features: ["Tree removal", "Vegetation clearing", "Debris cleanup", "Soil preparation"]
     },
     {
-      id: "pre-construction",
-      icon: Building,
-      title: "Pre-Construction Services",
-      description: "Building demolition and site preparation services",
-      image: foundationImage,
-      duration: "2-3 weeks",
-      category: "Pre-Construction"
-    },
-    {
-      id: "tree-protection",
-      icon: Trees,
-      title: "Tree Protection",
-      description: "Professional tree preservation during construction",
-      image: landscapingImage,
-      duration: "Ongoing",
-      category: "Pre-Construction"
+      id: "pre-construction", 
+      title: "Pre-Construction",
+      description: "Comprehensive planning and preparation services before construction begins",
+      price: "Starting at $5,000",
+      image: preConstruction,
+      features: ["Site surveys", "Permit assistance", "Planning consultation", "Design review"]
     },
     {
       id: "excavation",
-      icon: Truck,
       title: "Excavation",
-      description: "Precision excavation for foundations and utilities",
-      image: foundationImage,
-      duration: "1-2 weeks",
-      category: "Foundation"
+      description: "Professional excavation and earthwork for foundation preparation",
+      price: "Starting at $8,000", 
+      image: excavation,
+      features: ["Site excavation", "Grading", "Drainage preparation", "Foundation prep"]
     },
     {
       id: "foundation",
-      icon: Hammer,
-      title: "Foundation Work",
-      description: "Footings, ICF forming, and structural foundations",
-      image: foundationImage,
-      duration: "2-4 weeks",
-      category: "Foundation"
+      title: "Foundation Work", 
+      description: "Expert foundation installation with ICF forming and footing systems",
+      price: "Starting at $15,000",
+      image: foundationWork,
+      features: ["Excavation", "ICF forming", "Concrete pouring", "Waterproofing"]
     },
     {
-      id: "plumbing-sewer",
-      icon: Wrench,
+      id: "plumbing",
       title: "Plumbing & Sewer",
-      description: "Complete plumbing, water, and sewer system installation",
-      image: foundationImage,
-      duration: "1-2 weeks",
-      category: "Systems"
-    },
-    {
-      id: "mid-construction",
-      icon: Building,
-      title: "Mid-Construction Services",
-      description: "Quality control and project management during construction",
-      image: framingImage,
-      duration: "Ongoing",
-      category: "Construction"
+      description: "Complete plumbing systems installation and sewer connections",
+      price: "Starting at $12,000",
+      image: plumbing,
+      features: ["Pipe installation", "Fixture mounting", "Sewer connections", "Water systems"]
     },
     {
       id: "framing",
-      icon: Hammer,
       title: "Framing",
-      description: "Structural framing and rough carpentry work",
-      image: framingImage,
-      duration: "3-6 weeks",
-      category: "Construction"
+      description: "Professional structural framing for residential and commercial projects", 
+      price: "Starting at $20,000",
+      image: framingWork,
+      features: ["Structural framing", "Roof construction", "Wall systems", "Floor systems"]
     },
     {
-      id: "whole-house-plumbing",
-      icon: Wrench,
-      title: "Whole House Plumbing",
-      description: "Complete residential plumbing system installation",
-      image: foundationImage,
-      duration: "2-3 weeks",
-      category: "Systems"
-    },
-    {
-      id: "radiant-heating",
-      icon: Wrench,
-      title: "Radiant Floor Heating",
-      description: "Indoor radiant floor heating system installation",
-      image: foundationImage,
-      duration: "1-2 weeks",
-      category: "Systems"
-    },
-    {
-      id: "site-cleaning",
-      icon: Truck,
-      title: "Site Cleaning",
-      description: "Professional construction site cleanup services",
-      image: foundationImage,
-      duration: "1-3 days",
-      category: "Maintenance"
+      id: "mid-construction",
+      title: "Mid-Construction Services",
+      description: "Quality control and progress management during construction phases",
+      price: "Starting at $10,000",
+      image: midConstruction,
+      features: ["Progress monitoring", "Quality control", "Coordination", "Problem solving"]
     },
     {
       id: "interior-design",
-      icon: Paintbrush,
-      title: "Interior Design & Painting",
-      description: "Sundial Interiors - Premium design and finishing services",
-      image: interiorImage,
-      duration: "4-8 weeks",
-      category: "Finishing"
-    },
-    {
-      id: "post-construction",
-      icon: Building,
-      title: "Post-Construction Services",
-      description: "Final inspections and project completion services",
-      image: foundationImage,
-      duration: "1-2 weeks",
-      category: "Completion"
+      title: "Interior Design",
+      description: "Complete interior design and finishing services by Sundial Interiors",
+      price: "Starting at $25,000", 
+      image: interiorDesign,
+      features: ["Design consultation", "Material selection", "Custom finishes", "Project coordination"]
     },
     {
       id: "site-cleanup",
-      icon: Truck,
-      title: "Final Site Cleanup",
-      description: "Complete site restoration and cleanup",
-      image: foundationImage,
-      duration: "3-5 days",
-      category: "Completion"
+      title: "Site Cleanup",
+      description: "Comprehensive post-construction cleanup and final detailing",
+      price: "Starting at $3,000",
+      image: siteCleanup,
+      features: ["Debris removal", "Deep cleaning", "Final inspection", "Move-in preparation"]
     },
     {
       id: "concrete-work",
-      icon: Hammer,
       title: "Concrete Work",
-      description: "Decorative concrete steps and structural elements",
-      image: foundationImage,
-      duration: "1-2 weeks",
-      category: "Finishing"
+      description: "Premium concrete work including steps, walkways, and decorative finishes",
+      price: "Starting at $6,000",
+      image: concreteWork,
+      features: ["Decorative concrete", "Steps & walkways", "Driveways", "Custom finishes"]
     },
     {
       id: "landscaping",
-      icon: Trees,
-      title: "Landscape & Hardscape",
-      description: "Complete landscaping and hardscape design/installation",
-      image: landscapingImage,
-      duration: "2-4 weeks",
-      category: "Finishing"
+      title: "Landscaping",
+      description: "Professional landscaping and hardscape installation services",
+      price: "Starting at $8,000",
+      image: landscaping,
+      features: ["Garden design", "Hardscape installation", "Irrigation systems", "Maintenance planning"]
     }
   ];
-
-  const categories = [
-    "All Services",
-    "Pre-Construction",
-    "Foundation", 
-    "Construction",
-    "Systems",
-    "Finishing",
-    "Completion",
-    "Maintenance"
-  ];
-
-  const [selectedCategory, setSelectedCategory] = useState("All Services");
-
-  const filteredServices = selectedCategory === "All Services" 
-    ? allServices 
-    : allServices.filter(service => service.category === selectedCategory);
 
   return (
     <div className="min-h-screen">
@@ -199,7 +133,7 @@ const Services = () => {
         <div className="relative z-10 container mx-auto px-4 text-center">
           <div className="max-w-4xl mx-auto space-y-8 animate-fade-in">
             <Badge variant="outline" className="bg-background/10 backdrop-blur-sm border-primary/30 text-background font-medium">
-              Comprehensive Services
+              Premium Construction Services
             </Badge>
             
             <h1 className="font-playfair text-4xl md:text-6xl font-bold text-background leading-tight">
@@ -214,51 +148,37 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Category Filter */}
-      <section className="py-12 bg-background border-b border-border">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-wrap justify-center gap-3">
-            {categories.map((category) => (
-              <Button
-                key={category}
-                variant={selectedCategory === category ? "luxury" : "outline"}
-                onClick={() => setSelectedCategory(category)}
-                className="transition-luxury"
-              >
-                {category}
-              </Button>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Services Grid */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="font-playfair text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
+              Our Services Portfolio
+            </h2>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              View our comprehensive range of construction services with real project examples and detailed explanations.
+            </p>
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredServices.map((service, index) => (
+            {services.map((service, index) => (
               <Card key={service.id} className="group overflow-hidden bg-gradient-card border-border/50 hover:shadow-luxury transition-luxury animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
-                <div className="relative h-48 overflow-hidden">
+                <div className="relative h-64 overflow-hidden">
                   <img 
                     src={service.image} 
                     alt={service.title}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                  <div className="absolute top-4 left-4">
-                    <div className="w-12 h-12 bg-primary/90 backdrop-blur-sm rounded-lg flex items-center justify-center">
-                      <service.icon className="w-6 h-6 text-primary-foreground" />
-                    </div>
-                  </div>
                   <div className="absolute top-4 right-4">
-                    <Badge variant="outline" className="bg-background/20 backdrop-blur-sm border-background/30 text-background">
-                      {service.category}
+                    <Badge variant="outline" className="bg-background/90 backdrop-blur-sm border-background/30 text-foreground">
+                      {service.price}
                     </Badge>
                   </div>
                 </div>
                 
                 <CardContent className="p-6 space-y-4">
-                  <div className="space-y-2">
+                  <div className="space-y-3">
                     <h3 className="font-semibold text-xl text-foreground group-hover:text-primary transition-colors">
                       {service.title}
                     </h3>
@@ -267,15 +187,28 @@ const Services = () => {
                     </p>
                   </div>
                   
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center space-x-2 text-sm text-muted-foreground">
-                      <Clock className="w-4 h-4" />
-                      <span>{service.duration}</span>
-                    </div>
+                  <div className="space-y-3">
+                    <h4 className="font-medium text-foreground">What's Included:</h4>
+                    <ul className="space-y-1">
+                      {service.features.map((feature) => (
+                        <li key={feature} className="flex items-center text-sm text-muted-foreground">
+                          <Shield className="w-3 h-3 text-primary mr-2 flex-shrink-0" />
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  
+                  <div className="pt-4 flex items-center justify-between">
                     <NavLink to={`/services/${service.id}`}>
                       <Button variant="ghost" className="group p-0 h-auto text-primary hover:text-primary-light">
-                        Learn More
+                        View Details
                         <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                      </Button>
+                    </NavLink>
+                    <NavLink to="/quote">
+                      <Button variant="outline" size="sm">
+                        Get Quote
                       </Button>
                     </NavLink>
                   </div>
@@ -355,10 +288,12 @@ const Services = () => {
               Contact us today to discuss your construction needs and get a personalized quote.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="luxury" size="xl">
-                Get Project Quote
-                <ArrowRight className="w-5 h-5 ml-2" />
-              </Button>
+              <NavLink to="/quote">
+                <Button variant="luxury" size="xl">
+                  Get Project Quote
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </Button>
+              </NavLink>
               <Button variant="outline" size="xl" className="bg-secondary-foreground/10 backdrop-blur-sm border-secondary-foreground/30 text-secondary-foreground hover:bg-secondary-foreground hover:text-secondary">
                 Schedule Consultation
               </Button>
