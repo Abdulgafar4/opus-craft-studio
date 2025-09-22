@@ -106,16 +106,16 @@ const Pricing = () => {
         
         <div className="relative z-10 container mx-auto px-4 text-center">
           <div className="max-w-4xl mx-auto space-y-8 animate-fade-in">
-            <Badge variant="outline" className="bg-background/10 backdrop-blur-sm border-primary/30 text-background font-medium">
+            <Badge variant="outline" className="bg-secondary-foreground/10 backdrop-blur-sm border-primary/30 text-secondary-foreground font-medium">
               Transparent Pricing
             </Badge>
             
-            <h1 className="font-playfair text-4xl md:text-6xl font-bold text-background leading-tight">
+            <h1 className="font-playfair text-4xl md:text-6xl font-bold text-secondary-foreground leading-tight">
               Investment in
-              <span className="text-primary-glow block mt-2">Excellence</span>
+              <span className="text-primary block mt-2">Excellence</span>
             </h1>
             
-            <p className="text-xl md:text-2xl text-background/90 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-secondary-foreground/90 max-w-3xl mx-auto leading-relaxed">
               Discover our competitive pricing for luxury construction services with no hidden costs.
             </p>
           </div>

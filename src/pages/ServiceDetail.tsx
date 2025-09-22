@@ -19,6 +19,15 @@ import foundationImage from "@/assets/foundation-work.jpg";
 import framingImage from "@/assets/framing-work.jpg";
 import interiorImage from "@/assets/interior-design.jpg";
 import landscapingImage from "@/assets/landscaping.jpg";
+import pressureWashingImage from "@/assets/pressure-washing.jpg";
+
+// Showcase images
+import deckBefore from "@/assets/showcase/deck-before.jpg";
+import deckAfter from "@/assets/showcase/deck-after.jpg";
+import foundationShowcase1 from "@/assets/showcase/foundation-showcase-1.jpg";
+import foundationShowcase2 from "@/assets/showcase/foundation-showcase-2.jpg";
+import framingShowcase1 from "@/assets/showcase/framing-showcase-1.jpg";
+import interiorShowcase1 from "@/assets/showcase/interior-showcase-1.jpg";
 
 const ServiceDetail = () => {
   const { serviceId } = useParams();
@@ -183,6 +192,45 @@ const ServiceDetail = () => {
         "Increased property value",
         "Low-maintenance solutions"
       ]
+    },
+    "pressure-washing": {
+      icon: Building,
+      title: "Pressure Washing",
+      subtitle: "Professional Exterior Cleaning Services",
+      description: "Restore the beauty of your property with our professional pressure washing services. We clean decks, siding, roofs, driveways, patios, and more using commercial-grade equipment and eco-friendly methods.",
+      image: pressureWashingImage,
+      duration: "1-3 days",
+      priceRange: "$500 - $3,500",
+      category: "Maintenance",
+      features: [
+        "Deck restoration and cleaning",
+        "House siding deep cleaning", 
+        "Roof moss and algae removal",
+        "Driveway and pathway cleaning",
+        "Patio and pool deck maintenance",
+        "Stone, brick, and masonry cleaning",
+        "Commercial pressure washing equipment",
+        "Eco-friendly cleaning solutions"
+      ],
+      process: [
+        "Property assessment and preparation",
+        "Equipment setup and safety measures",
+        "Pre-treatment of stubborn stains",
+        "Systematic pressure washing",
+        "Post-cleaning inspection",
+        "Cleanup and final walkthrough"
+      ],
+      benefits: [
+        "Restored curb appeal",
+        "Extended surface lifespan",
+        "Removal of harmful contaminants",
+        "Increased property value",
+        "Professional results guaranteed"
+      ],
+      showcase: [
+        { image: deckBefore, title: "Deck Before Cleaning", description: "Weathered and stained deck surface" },
+        { image: deckAfter, title: "Deck After Cleaning", description: "Restored natural wood beauty" }
+      ]
     }
   };
 
@@ -328,6 +376,80 @@ const ServiceDetail = () => {
               </Card>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Project Showcase Section */}
+      <section className="py-20 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="font-playfair text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
+              Our Work Gallery
+            </h2>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              See the quality and craftsmanship we deliver in every {service.title.toLowerCase()} project.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+            {/* Showcase Images */}
+            {serviceId === 'foundation' && (
+              <>
+                <Card className="overflow-hidden hover:shadow-luxury transition-all duration-300">
+                  <div className="aspect-video bg-cover bg-center" style={{ backgroundImage: `url(${foundationShowcase1})` }} />
+                  <CardContent className="p-4">
+                    <h4 className="font-semibold text-foreground">Foundation Pour in Progress</h4>
+                    <p className="text-sm text-muted-foreground">Professional concrete work with advanced equipment</p>
+                  </CardContent>
+                </Card>
+                <Card className="overflow-hidden hover:shadow-luxury transition-all duration-300">
+                  <div className="aspect-video bg-cover bg-center" style={{ backgroundImage: `url(${foundationShowcase2})` }} />
+                  <CardContent className="p-4">
+                    <h4 className="font-semibold text-foreground">Completed Foundation</h4>
+                    <p className="text-sm text-muted-foreground">Perfect concrete finish with ICF forming</p>
+                  </CardContent>
+                </Card>
+              </>
+            )}
+            {serviceId === 'framing' && (
+              <Card className="overflow-hidden hover:shadow-luxury transition-all duration-300">
+                <div className="aspect-video bg-cover bg-center" style={{ backgroundImage: `url(${framingShowcase1})` }} />
+                <CardContent className="p-4">
+                  <h4 className="font-semibold text-foreground">Precision Framing Work</h4>
+                  <p className="text-sm text-muted-foreground">Expert carpentry with premium materials</p>
+                </CardContent>
+              </Card>
+            )}
+            {serviceId === 'interior-design' && (
+              <Card className="overflow-hidden hover:shadow-luxury transition-all duration-300">
+                <div className="aspect-video bg-cover bg-center" style={{ backgroundImage: `url(${interiorShowcase1})` }} />
+                <CardContent className="p-4">
+                  <h4 className="font-semibold text-foreground">Custom Interior Design</h4>
+                  <p className="text-sm text-muted-foreground">Luxurious finishes by Sundial Interiors</p>
+                </CardContent>
+              </Card>
+            )}
+          </div>
+
+          {/* Before & After Section */}
+          {service.showcase && (
+            <div className="max-w-4xl mx-auto">
+              <h3 className="font-playfair text-2xl md:text-3xl font-bold text-center text-foreground mb-12">
+                Before & After Results
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {service.showcase.map((item, index) => (
+                  <Card key={index} className="overflow-hidden hover:shadow-luxury transition-all duration-300">
+                    <div className="aspect-video bg-cover bg-center" style={{ backgroundImage: `url(${item.image})` }} />
+                    <CardContent className="p-6">
+                      <h4 className="font-semibold text-lg text-foreground mb-2">{item.title}</h4>
+                      <p className="text-muted-foreground">{item.description}</p>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </section>
 

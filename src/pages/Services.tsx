@@ -26,6 +26,7 @@ import plumbing from "@/assets/plumbing.jpg";
 import midConstruction from "@/assets/mid-construction.jpg";
 import siteCleanup from "@/assets/site-cleanup.jpg";
 import concreteWork from "@/assets/concrete-work.jpg";
+import pressureWashing from "@/assets/pressure-washing.jpg";
 
 const Services = () => {
   const services = [
@@ -116,6 +117,14 @@ const Services = () => {
       price: "Starting at $8,000",
       image: landscaping,
       features: ["Garden design", "Hardscape installation", "Irrigation systems", "Maintenance planning"]
+    },
+    {
+      id: "pressure-washing",
+      title: "Pressure Washing",
+      description: "Professional pressure washing services for decks, siding, roofs, and more",
+      price: "Starting at $500",
+      image: pressureWashing,
+      features: ["Deck cleaning", "Siding restoration", "Roof washing", "Driveway & patio cleaning", "Stone & masonry cleaning", "Pool deck maintenance"]
     }
   ];
 
